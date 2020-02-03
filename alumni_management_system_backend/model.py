@@ -18,11 +18,15 @@ class CreateCollege:
     def __str__(self):
         return self.name + ',' + self.affiliation_no + ',' + self.email + ',' + self.contact_no + ',' + self.password
 
-
+      
+class CreateAlumni:
+  def __init__(self, name, email, phone, branch, enrollment, college, course, address, job, year_of_passing, aadhar):
+       
+      
 def register_college(name, email, affiliation_no, password, contact_no):
     try:
         college = CreateCollege(name, email, affiliation_no, password, contact_no)
-        query = 'insert into users values (%s, %s, %s, %s, %s)'
+        query = 'insert into register_college values (%s, %s, %s, %s, %s)'
         cursor.execute(query, (college.name, college.affiliation_no, college.password, college.contact_no))
         return college
     except IntergityError as error:
@@ -30,7 +34,8 @@ def register_college(name, email, affiliation_no, password, contact_no):
 
 
 def register_alumni():
-    pass
+    try:
+       alumni = 
 
 
 def create_event():
